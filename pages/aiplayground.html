@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+<link rel="canonical" href="https://uit.stanford.edu/aiplayground" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<script type="application/json" id="gin-setting-darkmode">{ "ginDarkmode": "auto" }</script>
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<link rel="icon" href="/themes/custom/stanford_uit/favicon.ico" type="image/vnd.microsoft.icon" />
+
+    <title>AI Playground Quick Start Guide | University IT</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_lEWvOaqbritgQ2CSfUgbYQ8U0ad0q_YIbhqg-lThr4Q.css?delta=0&amp;language=en&amp;theme=stanford_uit&amp;include=eJx1kt1uwyAMhV-IhItJex3kgEs9AUbYpOvbj2b9WdvsAoz5DtaxBYRMxSlzWqDZa5y1IRr4i7YodwF5LgZEUB2VL_TKzXqRGfOCYQ9E5pjQeUG3fu4JaqOie0BI0Z0o4H-Qcm28ojvQN4pZmFW0QXXDZyO2MfECaRI9JyrxnWcUgYjiTsdR7J0rLGI8N7Sec-WCRWV-VU1TxtJ_ZaH1CmkOBImjiVTsWEMneE98Gr2Qvw3XVGgQR7Wj3F4_buZeal8SyXFMVhTKgVtwndQ-TPhQntFL009MuDePTqCI-3hB12QaiZGzKGa7Ge-C7Wbtct4-gJiV8CR22-fMoSf8AWBZ6SQ" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_r_m1LOydMOj7nxwsQSHcRlMxBwDj2XN61770FA0UgHM.css?delta=1&amp;language=en&amp;theme=stanford_uit&amp;include=eJx1kt1uwyAMhV-IhItJex3kgEs9AUbYpOvbj2b9WdvsAoz5DtaxBYRMxSlzWqDZa5y1IRr4i7YodwF5LgZEUB2VL_TKzXqRGfOCYQ9E5pjQeUG3fu4JaqOie0BI0Z0o4H-Qcm28ojvQN4pZmFW0QXXDZyO2MfECaRI9JyrxnWcUgYjiTsdR7J0rLGI8N7Sec-WCRWV-VU1TxtJ_ZaH1CmkOBImjiVTsWEMneE98Gr2Qvw3XVGgQR7Wj3F4_buZeal8SyXFMVhTKgVtwndQ-TPhQntFL009MuDePTqCI-3hB12QaiZGzKGa7Ge-C7Wbtct4-gJiV8CR22-fMoSf8AWBZ6SQ" />
+<link rel="stylesheet" media="all" href="//cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_BIjchVtk5j1yMOP7q24CmIbG015Srm4pfMALPYOzDic.css?delta=3&amp;language=en&amp;theme=stanford_uit&amp;include=eJx1kt1uwyAMhV-IhItJex3kgEs9AUbYpOvbj2b9WdvsAoz5DtaxBYRMxSlzWqDZa5y1IRr4i7YodwF5LgZEUB2VL_TKzXqRGfOCYQ9E5pjQeUG3fu4JaqOie0BI0Z0o4H-Qcm28ojvQN4pZmFW0QXXDZyO2MfECaRI9JyrxnWcUgYjiTsdR7J0rLGI8N7Sec-WCRWV-VU1TxtJ_ZaH1CmkOBImjiVTsWEMneE98Gr2Qvw3XVGgQR7Wj3F4_buZeal8SyXFMVhTKgVtwndQ-TPhQntFL009MuDePTqCI-3hB12QaiZGzKGa7Ge-C7Wbtct4-gJiV8CR22-fMoSf8AWBZ6SQ" />
+<link rel="stylesheet" media="all" href="//fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&amp;display=swap" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_LXub7PuxORSIH8wuSfEHazG9v95teiBbk9Atdmi46AI.css?delta=5&amp;language=en&amp;theme=stanford_uit&amp;include=eJx1kt1uwyAMhV-IhItJex3kgEs9AUbYpOvbj2b9WdvsAoz5DtaxBYRMxSlzWqDZa5y1IRr4i7YodwF5LgZEUB2VL_TKzXqRGfOCYQ9E5pjQeUG3fu4JaqOie0BI0Z0o4H-Qcm28ojvQN4pZmFW0QXXDZyO2MfECaRI9JyrxnWcUgYjiTsdR7J0rLGI8N7Sec-WCRWV-VU1TxtJ_ZaH1CmkOBImjiVTsWEMneE98Gr2Qvw3XVGgQR7Wj3F4_buZeal8SyXFMVhTKgVtwndQ-TPhQntFL009MuDePTqCI-3hB12QaiZGzKGa7Ge-C7Wbtct4-gJiV8CR22-fMoSf8AWBZ6SQ" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_S94X9oKnES53bDVdqlrWTPX615zN0zvqCrhZP0HBoZY.css?delta=6&amp;language=en&amp;theme=stanford_uit&amp;include=eJx1kt1uwyAMhV-IhItJex3kgEs9AUbYpOvbj2b9WdvsAoz5DtaxBYRMxSlzWqDZa5y1IRr4i7YodwF5LgZEUB2VL_TKzXqRGfOCYQ9E5pjQeUG3fu4JaqOie0BI0Z0o4H-Qcm28ojvQN4pZmFW0QXXDZyO2MfECaRI9JyrxnWcUgYjiTsdR7J0rLGI8N7Sec-WCRWV-VU1TxtJ_ZaH1CmkOBImjiVTsWEMneE98Gr2Qvw3XVGgQR7Wj3F4_buZeal8SyXFMVhTKgVtwndQ-TPhQntFL009MuDePTqCI-3hB12QaiZGzKGa7Ge-C7Wbtct4-gJiV8CR22-fMoSf8AWBZ6SQ" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_CluHX_Pdy8_CBJrwHNwZTwBEJ-XkCgtGgrVLlvVivsk.css?delta=7&amp;language=en&amp;theme=stanford_uit&amp;include=eJx1kt1uwyAMhV-IhItJex3kgEs9AUbYpOvbj2b9WdvsAoz5DtaxBYRMxSlzWqDZa5y1IRr4i7YodwF5LgZEUB2VL_TKzXqRGfOCYQ9E5pjQeUG3fu4JaqOie0BI0Z0o4H-Qcm28ojvQN4pZmFW0QXXDZyO2MfECaRI9JyrxnWcUgYjiTsdR7J0rLGI8N7Sec-WCRWV-VU1TxtJ_ZaH1CmkOBImjiVTsWEMneE98Gr2Qvw3XVGgQR7Wj3F4_buZeal8SyXFMVhTKgVtwndQ-TPhQntFL009MuDePTqCI-3hB12QaiZGzKGa7Ge-C7Wbtct4-gJiV8CR22-fMoSf8AWBZ6SQ" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_jsZgz3-EaAcl67gRzL-coEmU0RcngYfi9q9NwRBtCdg.css?delta=8&amp;language=en&amp;theme=stanford_uit&amp;include=eJx1kt1uwyAMhV-IhItJex3kgEs9AUbYpOvbj2b9WdvsAoz5DtaxBYRMxSlzWqDZa5y1IRr4i7YodwF5LgZEUB2VL_TKzXqRGfOCYQ9E5pjQeUG3fu4JaqOie0BI0Z0o4H-Qcm28ojvQN4pZmFW0QXXDZyO2MfECaRI9JyrxnWcUgYjiTsdR7J0rLGI8N7Sec-WCRWV-VU1TxtJ_ZaH1CmkOBImjiVTsWEMneE98Gr2Qvw3XVGgQR7Wj3F4_buZeal8SyXFMVhTKgVtwndQ-TPhQntFL009MuDePTqCI-3hB12QaiZGzKGa7Ge-C7Wbtct4-gJiV8CR22-fMoSf8AWBZ6SQ" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_ENbIy5IhLALnofR_V6L_FH-336EYvPn7yuKljCiZpmM.css?delta=9&amp;language=en&amp;theme=stanford_uit&amp;include=eJx1kt1uwyAMhV-IhItJex3kgEs9AUbYpOvbj2b9WdvsAoz5DtaxBYRMxSlzWqDZa5y1IRr4i7YodwF5LgZEUB2VL_TKzXqRGfOCYQ9E5pjQeUG3fu4JaqOie0BI0Z0o4H-Qcm28ojvQN4pZmFW0QXXDZyO2MfECaRI9JyrxnWcUgYjiTsdR7J0rLGI8N7Sec-WCRWV-VU1TxtJ_ZaH1CmkOBImjiVTsWEMneE98Gr2Qvw3XVGgQR7Wj3F4_buZeal8SyXFMVhTKgVtwndQ-TPhQntFL009MuDePTqCI-3hB12QaiZGzKGa7Ge-C7Wbtct4-gJiV8CR22-fMoSf8AWBZ6SQ" />
+
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/29833","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"eJx1k8tywyAMRX8Im0Vnsu-XMDJWsFJAHiSc5u9L0jxqO10Y0D13Bj0MjImyU-Y4QLH3vdeC2E-8YKGsmNXAX9ttl6eZPGcDIqiO8gm9crFepMc04PgOBOYQ0XlBtxzeGebrte-AkKI704j_QUpzaWm7I32jbE2nt56qHDlwVTuWOkPsX4oZmFW0wOxaoYXYHjkrnFE4oTvscYg8QOxEL5Fy2POmfsleTigCAcWdp5bfngvX4tEJZHEfe6wwiPFc0HpOM-c2MOm3rq5LmOuv7VGoV1qwuyZlAmXbvmYWfAY-tg6Sf8z9qVMmNfcpKgQb2rKNezjB91pMZoYCoeU0ySOHl9LXPNchkkztrxGFfOQyukpqX6X4Ma_Reh4rtJnFiq0bukb3oGuBkYsoJntryvaNoHiY8fP6MEzzOkEofrKv410tC7WrIGJRsXvJncTUJj0acj3fnpSYhfAs9rb2icca8QeM9nN1","theme":"stanford_uit","theme_token":null},"ajaxTrustedUrl":[],"gtag":{"tagId":"","consentMode":false,"otherIds":[],"events":[],"additionalConfigInfo":[]},"gtm":{"tagId":null,"settings":{"data_layer":"dataLayer","include_classes":false,"allowlist_classes":"","blocklist_classes":"","include_environment":false,"environment_id":"","environment_token":""},"tagIds":["GTM-5Z988HL"]},"autologout":{"timeout":259200000,"timeout_padding":30000,"message":"We are about to log you out for inactivity. If we do, you will lose any unsaved work. Do you need more time?","redirect_url":"\/?destination=\/aiplayground\u0026autologout_timeout=1","title":"University IT Alert","refresh_only":false,"no_dialog":false,"disable_buttons":false,"yes_button":"Yes","no_button":"No","use_alt_logout_method":false,"logout_regardless_of_activity":false,"modal_width":450},"gin":{"darkmode":"auto","darkmode_class":"gin--dark-mode","preset_accent_color":"blue","accent_color":"","preset_focus_color":"gin","focus_color":"","highcontrastmode":false,"highcontrastmode_class":"gin--high-contrast-mode","toolbar_variant":"classic"},"toolbar":{"breakpoints":{"toolbar.narrow":"only screen and (min-width: 16.5em)","toolbar.standard":"only screen and (min-width: 38.125em)","toolbar.wide":"only screen and (min-width: 61em)"},"subtreesHash":"EjR1-2tK2k1FM8DPQfziD1VhCgdyMde9NPXJXs8VQqM"},"hoverIntentTimeout":500,"user":{"uid":"102205","permissionsHash":"916193e8ef89f63b797aa31e8b52a4c00b559dec1569a19ebe2c814f07198a4f"}}</script>
+<script src="/themes/contrib/gin/dist/js/init.js?tawqt9"></script>
+<script src="/sites/default/files/js/js_4SlNPoSoVMgJeEXcjT2nkKi19q8AKY0RB3heqDkjdyo.js?scope=header&amp;delta=1&amp;language=en&amp;theme=stanford_uit&amp;include=eJxlkU1ygzAMhS9k8K77nsQjhHBEjcVIIk1vH2cmhIEu_PO-J3mebRgXrslFygAa32vvStTf5E7K1al6ADPyxHUmdNE4W2_sxMuqrShN_CALsLkUybJ5HHVbofQHCYOImyusqZ2vLDEXGaB05n-Faw4oSp82dL5T1_hPyFxjGwkQXzl2iaUlYtyDfzhXbkUiuVByyDG36ap7mOFxhkswhzqJjmljj0dYHOvZmqQ6_JLJQunrbF1udPJ20TURrq9NhrDS9-snQvOTESje4rF9U70zUoJC6hb_ozTbE4J3tfw"></script>
+<script src="/modules/contrib/google_tag/js/gtag.js?tawqt9"></script>
+<script src="/modules/contrib/google_tag/js/gtm.js?tawqt9"></script>
+
+  </head>
+  <body class="toolbar-icon-10 gin--classic-toolbar toolbar-loading layout-no-sidebars has-featured-top page-node-29833 path-aiplayground user-logged-in path-node node--type-guide" data-gin-accent="blue" data-gin-focus="gin">
+    <a href="#main-content" class="visually-hidden-focusable">
+      Skip to main content
+    </a>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5Z988HL"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <div id="toolbar-administration" role="group" aria-label="Site administration toolbar" class="toolbar">
+  <nav id="toolbar-bar" role="navigation" aria-label="Toolbar items" class="toolbar-bar clearfix">
+    <h2 class="visually-hidden">Toolbar items</h2>
+                                      <div class="home-toolbar-tab toolbar-tab">
+                              <a href="/" title="Return to site content" class="toolbar-icon toolbar-icon-escape-admin toolbar-item" data-toolbar-escape-admin>Back to site</a>
+                    <div>
+                          <nav class="toolbar-lining clearfix" role="navigation">
+
+            </nav>
+          </div>
+        </div>
+                                            <div class="toolbar-tab toolbar-tab--toolbar-item-administration">
+                              <a class="toolbar-menu__logo" href="/admin/content" aria-label="Toolbar Menu Logo">
+              <span class="visually-hidden">Toolbar Menu Logo</span>
+            </a>
+            <a href="/admin" title="Admin menu" class="toolbar-icon toolbar-icon-menu trigger toolbar-item" data-drupal-subtrees="" id="toolbar-item-administration" data-toolbar-tray="toolbar-item-administration-tray" role="button" aria-pressed="false">Manage</a>
+                    <div id="toolbar-item-administration-tray" data-toolbar-tray="toolbar-item-administration-tray" class="toolbar-tray">
+                          <nav class="toolbar-lining clearfix" role="navigation" aria-label="Administration menu">
+                <h3 class="toolbar-tray-name visually-hidden">Administration menu</h3>
+                        <div class="toolbar-menu-administration">
+              <ul class="clearfix toolbar-menu">
+
+
+
+
+      <li class="menu-item menu-item--expanded menu-item__admin_toolbar_tools-help">
+                  <a href="/" class="toolbar-icon toolbar-icon-admin-toolbar-tools-help toolbar-icon-default" title="" data-drupal-link-system-path="&lt;front&gt;">Drupal</a>
+                                        <ul class="toolbar-menu">
+
+
+
+                    <li class="menu-item-title">
+          <h2 class="toolbar-menu__title">
+            <a href="/">Tools</a>
+          </h2>
+        </li>
+
+      <li class="menu-item">
+                  <a href="/admin/index" class="toolbar-icon toolbar-icon-system-admin-index" title="" data-drupal-link-system-path="admin/index">Index</a>
+                      </li>
+
+
+
+
+      <li class="menu-item">
+                  <a href="/user/logout?token=mfGxnjOWsJx51_rWimYQ5yhmv11lCkD0Qs9mqI83PUA" class="toolbar-icon toolbar-icon-admin-toolbar-tools-extra-linksuser-logout" title="" data-drupal-link-system-path="user/logout">Logout</a>
+                      </li>
+        </ul>
+
+
+              </li>
+
+
+
+
+      <li class="menu-item menu-item--expanded menu-item--active-trail menu-item__system-admin_content">
+                  <a href="/admin/content" title="Find and manage content." class="toolbar-icon toolbar-icon-system-admin-content is-active" data-drupal-link-system-path="admin/content">Content</a>
+                                        <ul class="toolbar-menu">
+
+
+
+                    <li class="menu-item-title">
+          <h2 class="toolbar-menu__title">
+            <a href="/admin/content">Content</a>
+          </h2>
+        </li>
+
+      <li class="menu-item menu-item--expanded">
+                  <a href="/node/add" class="toolbar-icon toolbar-icon-admin-toolbar-tools-extra-linksnode-add" title="" data-drupal-link-system-path="node/add">Add content</a>
+                                        <ul class="toolbar-menu">
+
+
+
+                    <li class="menu-item-title">
+          <h3 class="toolbar-menu__sub-title">
+            <a href="/node/add">Add content</a>
+          </h3>
+        </li>
+
+      <li class="menu-item">
+                  <a href="/node/add/guide" title="Use Custom Page for pages where the content can be displayed in sections." class="toolbar-icon toolbar-icon-admin-toolbar-tools-extra-linksnode-add-guide" data-drupal-link-system-path="node/add/guide">Custom Page</a>
+                      </li>
+
+
+
+
+      <li class="menu-item">
+                  <a href="/node/add/service_information" title="An instruction or information page about a particular service." class="toolbar-icon toolbar-icon-admin-toolbar-tools-extra-linksnode-add-service-information" data-drupal-link-system-path="node/add/service_information">Service Information</a>
+                      </li>
+        </ul>
+
+
+              </li>
+        </ul>
+
+
+              </li>
+        </ul>
+
+          <a href="#" class="toolbar-menu__trigger trigger" role="button" aria-pressed="false">Close</a>
+
+
+</div>
+
+            </nav>
+          </div>
+        </div>
+                                            <div class="toolbar-tab">
+
+                    <div>
+                          <nav class="toolbar-lining clearfix" role="navigation">
+
+            </nav>
+          </div>
+        </div>
+                                            <div class="toolbar-tab user-menu toolbar-tab--toolbar-item-user">
+                              <a href="/user" title="My account" class="toolbar-icon toolbar-icon-user trigger toolbar-item" id="toolbar-item-user" data-toolbar-tray="toolbar-item-user-tray" role="button" aria-pressed="false">Joshua Barnett</a>
+                    <div id="toolbar-item-user-tray" data-toolbar-tray="toolbar-item-user-tray" class="toolbar-tray">
+                          <nav class="toolbar-lining clearfix" role="navigation" aria-label="User account actions">
+                <h3 class="toolbar-tray-name visually-hidden">User account actions</h3>
+                        <ul class="toolbar-menu"><li class="account"><a href="/user" title="User account">View profile</a></li><li class="account-edit"><a href="/user/102205/edit" title="Edit user account">Edit profile</a></li><li class="logout"><a href="/user/logout?token=mfGxnjOWsJx51_rWimYQ5yhmv11lCkD0Qs9mqI83PUA">Log out</a></li></ul>
+            </nav>
+          </div>
+        </div>
+            </nav>
+
+</div>
+
+
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+
+<div id="page-wrapper">
+  <div id="brand-bar"></div>
+  <div id="page">
+    <header id="header" class="header" role="banner" aria-label="Site header">
+                        <div class="navbar navbar-expand-lg bg-white" id="navbar-top">
+                        <div class="container">
+                                  <a href="/" title="Stanford" rel="home" class="navbar-brand">
+              <img src="/themes/custom/stanford_uit/logo.svg" alt="Stanford" class="img-fluid d-inline-block align-top" />
+            University IT
+    </a>
+
+
+                              <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#CollapsingNavbar" aria-controls="CollapsingNavbar" aria-expanded="false" aria-label="Toggle main menu"><span class="navbar-toggler-icon"><span class="sr-only">Main Menu</span></button>
+                <div class="collapse navbar-collapse justify-content-end" id="CollapsingNavbar">
+
+<nav id="block-mainmenu" region="primary_menu" class="block block-menu navigation menu--main">
+
+
+
+
+
+              <ul region="primary_menu" class="clearfix nav navbar-nav">
+                    <li class="nav-item menu-item--expanded dropdown">
+                          <a href="https://uit.stanford.edu/services" class="nav-link dropdown-toggle nav-link-https--uitstanfordedu-services" data-bs-toggle="dropdown" aria-expanded="false" role="button">Explore services</a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                    <li class="dropdown-item">
+                          <a href="/services" class="nav-link--services" data-drupal-link-system-path="services">View all services</a>
+              </li>
+                <li class="dropdown-item">
+                          <a href="https://uit.stanford.edu/guide/riskclassifications#security-approved-services" class="nav-link-https--uitstanfordedu-guide-riskclassificationssecurity-approved-services">View services approved for High Risk Data</a>
+              </li>
+        </ul>
+
+              </li>
+                <li class="nav-item menu-item--expanded dropdown">
+                          <a href="https://uit.stanford.edu" class="nav-link dropdown-toggle nav-link-https--uitstanfordedu" data-bs-toggle="dropdown" aria-expanded="false" role="button">I want to ...</a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                    <li class="dropdown-item">
+                          <a href="/videoconferencing" class="nav-link--videoconferencing" data-drupal-link-system-path="node/25788">Use video conferencing tools</a>
+              </li>
+                <li class="dropdown-item">
+                          <a href="/service/techtraining/schedule" class="nav-link--service-techtraining-schedule" data-drupal-link-system-path="node/2195">Get IT training</a>
+              </li>
+                <li class="dropdown-item">
+                          <a href="/service/gsuite/google-forms" class="nav-link--service-gsuite-google-forms" data-drupal-link-system-path="node/27558">Create web forms and surveys</a>
+              </li>
+                <li class="dropdown-item">
+                          <a href="/emailcalendar/config" class="nav-link--emailcalendar-config" data-drupal-link-system-path="node/24721">Set up email</a>
+              </li>
+                <li class="dropdown-item">
+                          <a href="/service/authentication/twostep" class="nav-link--service-authentication-twostep" data-drupal-link-system-path="node/3273">Set up two-step authentication</a>
+              </li>
+                <li class="dropdown-item">
+                          <a href="/service/sponsorship/person" class="nav-link--service-sponsorship-person" data-drupal-link-system-path="node/23889">Sponsor a SUNet ID</a>
+              </li>
+                <li class="dropdown-item">
+                          <a href="https://software.stanford.edu" class="nav-link-https--softwarestanfordedu">Get software</a>
+              </li>
+                <li class="dropdown-item">
+                          <a href="/guide/connecting-to-network" class="nav-link--guide-connecting-to-network" data-drupal-link-system-path="node/23623">Connect to the network</a>
+              </li>
+                <li class="dropdown-item">
+                          <a href="/service/mobiledevice/management" class="nav-link--service-mobiledevice-management" data-drupal-link-system-path="node/3183">Secure my mobile device</a>
+              </li>
+                <li class="dropdown-item">
+                          <a href="/guide/website/infrastructure-options" class="menu-node-unpublished nav-link--guide-website-infrastructure-options" data-drupal-link-system-path="node/28122">View website infrastructure options</a>
+              </li>
+                <li class="dropdown-item">
+                          <a href="/guide/website" class="nav-link--guide-website" data-drupal-link-system-path="node/23659">Publish a website</a>
+              </li>
+                <li class="dropdown-item">
+                          <a href="/getstarted" class="nav-link--getstarted" data-drupal-link-system-path="node/2959">Get started with IT at Stanford</a>
+              </li>
+        </ul>
+
+              </li>
+                <li class="nav-item menu-item--expanded dropdown">
+                          <a href="/" class="nav-link dropdown-toggle nav-link--" data-bs-toggle="dropdown" aria-expanded="false" role="button" data-drupal-link-system-path="&lt;front&gt;">Log into ...</a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                    <li class="dropdown-item">
+                          <a href="https://webmail.stanford.edu" class="nav-link-https--webmailstanfordedu">Email and calendar</a>
+              </li>
+                <li class="dropdown-item">
+                          <a href="https://stanford.zoom.us" class="nav-link-https--stanfordzoomus">Zoom video conferencing</a>
+              </li>
+                <li class="dropdown-item">
+                          <a href="https://stanfordmedicine.box.com/" class="nav-link-https--stanfordmedicineboxcom-">Medicine Box file storage</a>
+              </li>
+                <li class="dropdown-item">
+                          <a href="https://mailman.stanford.edu/mailman/ownerlistinfo" class="nav-link-https--mailmanstanfordedu-mailman-ownerlistinfo">Mailing lists</a>
+              </li>
+                <li class="dropdown-item">
+                          <a href="https://accounts.stanford.edu" class="nav-link-https--accountsstanfordedu">Stanford Accounts</a>
+              </li>
+                <li class="dropdown-item">
+                          <a href="https://mydevices.stanford.edu" class="nav-link-https--mydevicesstanfordedu">MyDevices</a>
+              </li>
+                <li class="dropdown-item">
+                          <a href="https://stanforduniversity.qualtrics.com/" class="nav-link-https--stanforduniversityqualtricscom-">Qualtrics survey tool</a>
+              </li>
+                <li class="dropdown-item">
+                          <a href="https://drive.google.com/a/stanford.edu" class="nav-link-https--drivegooglecom-a-stanfordedu">Google Drive</a>
+              </li>
+                <li class="dropdown-item">
+                          <a href="/guide/single-sign-on" class="nav-link--guide-single-sign-on" data-drupal-link-system-path="node/26100">Understanding single sign on</a>
+              </li>
+        </ul>
+
+              </li>
+                <li class="nav-item">
+                          <a href="https://stanford.service-now.com/services?id=services_status" class="nav-link nav-link-https--stanfordservice-nowcom-servicesidservices-status">View alerts</a>
+              </li>
+                <li class="nav-item menu-item--expanded dropdown">
+                          <a href="https://stanford.service-now.com/it_services" class="nav-link dropdown-toggle nav-link-https--stanfordservice-nowcom-it-services" data-bs-toggle="dropdown" aria-expanded="false" role="button">Get support</a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                    <li class="dropdown-item">
+                          <a href="https://stanford.service-now.com/it_services?id=kb_home" class="nav-link-https--stanfordservice-nowcom-it-servicesidkb-home">Find answers</a>
+              </li>
+                <li class="dropdown-item">
+                          <a href="https://uit.stanford.edu/security/report-incident" class="nav-link-https--uitstanfordedu-security-report-incident">Report a security incident</a>
+              </li>
+                <li class="dropdown-item">
+                          <a href="https://stanford.service-now.com/it_services?id=sc_home" class="nav-link-https--stanfordservice-nowcom-it-servicesidsc-home">Request something</a>
+              </li>
+                <li class="dropdown-item">
+                          <a href="https://stanford.service-now.com/services?id=get_help" class="nav-link-https--stanfordservice-nowcom-servicesidget-help">Get help</a>
+              </li>
+        </ul>
+
+              </li>
+        </ul>
+
+
+
+  </nav>
+
+
+                                      <div class="form-inline navbar-form justify-content-end">
+                        <div id="block-searchbox" class="ps-lg-3 block block-uit-search block-uit-search-block" region="top_header_form">
+
+
+      <div class="content">
+      <gcse:searchbox-only linktarget="https://uit.stanford.edu" queryparametername="q_as"></gcse:searchbox-only>
+    </div>
+  </div>
+
+
+                    </div>
+                                                    </div>
+                                                    </div>
+                      </div>
+                          <div class="navbar navbar-expand-lg bg-lagunita-dark navbar-dark navbar-expand-lg" id="navbar-main">
+                        <div class="container">
+
+                              <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#CollapsingNavbar2" aria-controls="CollapsingNavbar2" aria-expanded="false" aria-label="Toggle topic menu"><span class="navbar-toggler-icon"><span class="sr-only">Topic Menu</span></span></button>
+                <div class="collapse navbar-collapse justify-content-end" id="CollapsingNavbar2">
+
+<nav id="block-stanford-uit-cardinalai" region="secondary_menu" class="block block-menu navigation menu--cardinal-ai">
+
+
+    <h2 id="secondary-menu-title" ><a href="/ai" class="menu-item--active-trail" data-drupal-link-system-path="node/30290">Artificial Intelligence</a></h2>
+
+
+
+              <ul region="secondary_menu" class="clearfix nav navbar-nav">
+                    <li class="nav-item menu-item--expanded dropdown">
+                          <a href="/ai/overview" class="nav-link dropdown-toggle nav-link--ai-overview" data-bs-toggle="dropdown" aria-expanded="false" role="button" data-drupal-link-system-path="node/29679">Generative AI</a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                    <li class="dropdown-item">
+                          <a href="/ai/overview" class="nav-link--ai-overview" data-drupal-link-system-path="node/29679">GenAI Overview</a>
+              </li>
+                <li class="dropdown-item">
+                          <span class="nav-link-">AI Index</span>
+              </li>
+                <li class="dropdown-item">
+                          <a href="/ai/topics-services-list" class="nav-link--ai-topics-services-list" data-drupal-link-system-path="node/30041">GenAI Topics and Services List</a>
+              </li>
+                <li class="dropdown-item">
+                          <span class="nav-link-">Experiment with GenAI</span>
+              </li>
+                <li class="dropdown-item">
+                          <a href="/ai/use-cases" class="nav-link--ai-use-cases" data-drupal-link-system-path="node/29681">GenAI Use Cases for Experimenting</a>
+              </li>
+                <li class="dropdown-item">
+                          <a href="/ai/prompt-guide" class="nav-link--ai-prompt-guide" data-drupal-link-system-path="node/29680">GenAI Prompt Guide</a>
+              </li>
+                <li class="dropdown-item">
+                          <span class="nav-link-">Resources</span>
+              </li>
+                <li class="dropdown-item">
+                          <a href="/ai/faqs" class="nav-link--ai-faqs" data-drupal-link-system-path="node/29682">GenAI FAQs</a>
+              </li>
+                <li class="dropdown-item">
+                          <a href="/ai/news" class="nav-link--ai-news" data-drupal-link-system-path="node/30109">AI News at Stanford</a>
+              </li>
+        </ul>
+
+              </li>
+                <li class="nav-item menu-item--expanded active dropdown">
+                          <a href="/service/aiplayground" class="nav-link active dropdown-toggle nav-link--service-aiplayground" data-bs-toggle="dropdown" aria-expanded="false" role="button" data-drupal-link-system-path="node/29842">AI Playground</a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                    <li class="dropdown-item">
+                          <a href="https://aiplayground.stanford.edu/" class="nav-link-https--aiplaygroundstanfordedu-">Launch</a>
+              </li>
+                <li class="dropdown-item active">
+                          <a href="/aiplayground" class="active nav-link--aiplayground" data-drupal-link-system-path="node/29833">Quick Start Guide</a>
+              </li>
+                <li class="dropdown-item">
+                          <a href="/service/aiplayground" class="nav-link--service-aiplayground" data-drupal-link-system-path="node/29842">Service Information</a>
+              </li>
+                <li class="dropdown-item">
+                          <a href="/aiplayground/faqs" class="nav-link--aiplayground-faqs" data-drupal-link-system-path="node/30154">FAQs</a>
+              </li>
+                <li class="dropdown-item">
+                          <a href="/service/ai-api-gateway" class="nav-link--service-ai-api-gateway" data-drupal-link-system-path="node/30052">AI API Gateway</a>
+              </li>
+        </ul>
+
+              </li>
+                <li class="nav-item menu-item--expanded dropdown">
+                          <a href="/security/responsibleai" class="nav-link dropdown-toggle nav-link--security-responsibleai" data-bs-toggle="dropdown" aria-expanded="false" role="button" data-drupal-link-system-path="node/29327">Responsible AI</a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                    <li class="dropdown-item">
+                          <a href="/security/responsibleai" class="nav-link--security-responsibleai" data-drupal-link-system-path="node/29327">Responsible AI at Stanford</a>
+              </li>
+                <li class="dropdown-item">
+                          <a href="/ai/genai-tool-matrix" class="nav-link--ai-genai-tool-matrix" data-drupal-link-system-path="node/29620">GenAI Tool Evaluation Matrix</a>
+              </li>
+        </ul>
+
+              </li>
+                <li class="nav-item">
+                          <a href="/service/techtraining/ai-classes" class="nav-link nav-link--service-techtraining-ai-classes" data-drupal-link-system-path="node/29716">Training</a>
+              </li>
+                <li class="nav-item menu-item--expanded dropdown">
+                          <a href="/service/aiplayground" class="nav-link dropdown-toggle nav-link--service-aiplayground" data-bs-toggle="dropdown" aria-expanded="false" role="button" data-drupal-link-system-path="node/29842">Services</a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                    <li class="dropdown-item">
+                          <a href="/service/ai-catalyst" class="nav-link--service-ai-catalyst" data-drupal-link-system-path="node/30320">AI Catalyst</a>
+              </li>
+                <li class="dropdown-item">
+                          <a href="/service/slack/stanford-slackai" class="nav-link--service-slack-stanford-slackai" data-drupal-link-system-path="node/30306">Stanford Slack AI</a>
+              </li>
+                <li class="dropdown-item">
+                          <a href="/service/zoom/ai" class="nav-link--service-zoom-ai" data-drupal-link-system-path="node/29820">Zoom AI Companion</a>
+              </li>
+        </ul>
+
+              </li>
+        </ul>
+
+
+
+  </nav>
+
+
+                                                    </div>
+                                                    </div>
+                      </div>
+                  </header>
+    <main class="page-content" id="page-content">
+                <div class="fullwidth fullwidth-header">
+          <div class="fullwidth-header__inner section clearfix">
+              <section class="row region region-fullwidth-header">
+    <div id="block-cp-header" region="fullwidth_header" class="block block-ctools block-entity-viewnode">
+
+
+      <div class="content">
+      <section class="text-center text-white bg-plum-lagunita hero"  style="background-image: url(/sites/default/files/styles/hero/public/banners/AI-Playground-QS-Page2.png?itok=hKylpScW); background-size: cover; background-repeat: no-repeat; background-position: 50% 30%;">
+	<div class="container">
+		<div class="row">
+			<div class="col-11 p-3 p-sm-4 p-md-5 mx-auto my-2">
+				<h1 class="mb-4"><span class="field field--name-title field--type-string field--label-hidden">AI Playground Quick Start Guide</span>
+</h1>
+
+            <div class="clearfix text-formatted field field--name-field-guide-banner-text field--type-text-long field--label-hidden field__item"><p>Explore and experiment with AI in a Stanford-hosted environment</p>
+</div>
+
+				<div class="hero-link"><div class="list-inline-item py-2 px-4 mb-1"><a href="http://aiplayground.stanford.edu">Visit the AI Playground</a></div></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+    </div>
+  </div>
+<div class="views-element-container block block-views block-views-blockguide-menu-block" id="block-views-block-guide-menu-block" region="fullwidth_header">
+
+
+      <div class="content">
+      <div region="fullwidth_header"><div class="view view-guide-menu view-id-guide_menu view-display-id-block js-view-dom-id-5f20d241d3e380741aa26e0ca48bb9977e0911bbefb0af273e4d1c0587df3af4">
+
+
+
+      <div class="view-content row">
+          <div class="secondary-nav">
+    <div class="item-list"><ul class="list-group"><li class="list-group-item"><a href="https://uit.stanford.edu/aiplayground/#section_3778">About</a></li><li class="list-group-item"><a href="https://uit.stanford.edu/aiplayground/#section_3780">Open the playground</a></li><li class="list-group-item"><a href="https://uit.stanford.edu/aiplayground/#section_3781">Try out prompts</a></li><li class="list-group-item"><a href="https://uit.stanford.edu/aiplayground/#section_3782">Find &amp; explore models</a></li><li class="list-group-item"><a href="https://uit.stanford.edu/aiplayground/#section_7733">Assistants &amp; agents</a></li><li class="list-group-item"><a href="https://uit.stanford.edu/aiplayground/#section_3783">Explore right-side panel</a></li><li class="list-group-item"><a href="https://uit.stanford.edu/aiplayground/#section_3784">Share</a></li><li class="list-group-item"><a href="https://uit.stanford.edu/aiplayground/#section_3785">Customize</a></li><li class="list-group-item"><a href="https://uit.stanford.edu/aiplayground/#section_3925">New features</a></li><li class="list-group-item"><a href="https://uit.stanford.edu/aiplayground/faqs">FAQs</a></li></ul></div>
+  </div>
+
+    </div>
+
+          </div>
+</div>
+
+    </div>
+  </div>
+
+  </section>
+
+          </div>
+        </div>
+        <div id="main-wrapper" class="layout-main-wrapper clearfix">
+                        <div class="featured-top">
+            <section class="featured-top__inner section container clearfix" role="complementary">
+                <section class="row region region-featured-top">
+    <div class="views-element-container pt-5 pb-3 bg-fog-light block block-views block-views-blockservice-news-block" id="block-views-block-service-news-block" region="featured_top">
+
+
+      <div class="content">
+      <div region="featured_top"><div class="container view view-service-news view-id-service_news view-display-id-block js-view-dom-id-913031c1c68bafc0914d6896028a44328cb93ee872ca5f3887e8445b11ff7c9e">
+
+
+      <div class="view-header">
+      <div class="total-records-1">
+    </div>
+
+      <div class="view-content row">
+          <div class="col-md-6">
+    <div class="card card-block">
+<div class="card-image">  <img loading="lazy" src="/sites/default/files/styles/news_feature/public/AI-Playground-Nov2025.png?itok=1VJFXh4E" width="900" height="600" alt="" class="image-style-news-feature" />
+
+
+</div>
+<div class="card-content">
+<h2>In the AI Playground, Now You Can…</h2>
+<div class="date"><time datetime="2025-12-01T12:00:00Z" class="datetime">December 1, 2025</time>
+</div>
+</div>
+<div class="card-link">
+<p><a class="card-link" href="/news/ai-playground-nov-2025-updates"><span class="element-invisible">Learn more about In the AI Playground, Now You Can…</span></a></p>
+</div>
+</div>
+
+  </div>
+
+    </div>
+
+          </div>
+</div>
+
+    </div>
+  </div>
+
+  </section>
+
+            </section>
+          </div>
+                            <div id="main" class="container">
+          <div class="row">
+            <div class="col">
+              <div class="content-wrapper">
+                              <div class="highlighted">
+                      <section class="region region-highlighted">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </section>
+
+                </div>
+
+                                    <div class="content-top">
+
+                    </div>
+                                <div class="row row-offcanvas row-offcanvas-left clearfix">
+                    <div class="main-content col" id="content" role="main">
+                      <section class="section">
+                        <a id="main-content" tabindex="-1"></a>
+                                <nav class="tabs" role="navigation" aria-label="Tabs">
+
+
+  <h2 class="visually-hidden">Primary tabs</h2>
+  <ul class="nav primary nav-tabs"><li class="active nav-item"><a href="/aiplayground" class="nav-link active nav-link--aiplayground">View</a></li>
+<li class="nav-item"><a href="/node/29833/edit" class="nav-link nav-link--node-29833-edit">Edit</a></li>
+</ul>
+
+    </nav>
+  <div id="block-stanford-uit-system-main" region="content" class="block block-system block-system-main-block">
+
+
+      <div class="content">
+      <div >
+
+
+
+</div>
+    </div>
+  </div>
+
+
+                      </section>
+                    </div>
+                                                    </div>
+                              </div>
+            </div>
+          </div>
+        </div>
+          </div>
+                <div class="fullwidth fullwidth-content">
+          <div class="fullwidth-content__inner section clearfix">
+              <section class="row region region-fullwidth-content">
+    <div id="block-cp-content" region="fullwidth_content" class="block block-ctools block-entity-viewnode">
+
+
+      <div class="content">
+      <div >
+
+      <div class="field field--name-field-sections field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field__item">
+<section id="section_3779" class="primary-section      " >
+	<div  class="paragraph paragraph--section paragraph-id--3779 section--default">
+		<div class="container">
+							<div id="section_title_3779" class="primary-section-title">
+					<div class="row section-title">
+						<div class="mx-auto col-xs-10">
+							<h2 class="section-heading">
+																	About the AI Playground
+															</h2>
+						</div>
+					</div>
+				</div>
+						<div id="section_content_3779" class="primary-section-content  ">
+				<div class="row section-body justify-content-around"><div class="lead mx-auto col-md-9">
+        <p class="center" style="margin:0 auto;max-width:800px;">The Stanford AI Playground is a user-friendly platform, built on open-source technologies, that allows you to safely try various AI models from vendors like OpenAI, Google, and Anthropic in one spot. The AI Playground is being managed by University IT (UIT) as a pilot for most people at Stanford. This includes all active faculty,&nbsp;staff, students, postdocs, visiting scholars, and affiliates.&nbsp;&nbsp;</p>
+    </div></div>
+				<div class="row section"><div class="section-content col-md-6 ">
+
+<div id="section_3850"  class="paragraph paragraph--card paragraph-id--3850 card--default">
+    <div class="card card-purple mb-4 box-shadow">
+                <div class="card-body">
+                                                <h3 class="card-title text-center mt-0">
+            <div class="field field--name-field-card-title field--type-string field--label-hidden field__item">AI Playground: An Introduction</div>
+      </h3>
+
+            <div class="clearfix text-formatted field field--name-field-card-body field--type-text-long field--label-hidden field__item"><p class="center">With this short video, discover how exploring AI tools and technologies&nbsp;can benefit you. Plus, find out&nbsp;how the AI Playground works overall with&nbsp;short demos of how to use prompts and understand replies.</p><p class="center"><iframe data-dashlane-frameid="63" frameborder="0" height="281.25" marginheight="0" marginwidth="0" scrolling="no" src="https://www.youtube.com/embed/anpfvt_bN4M?autoplay=0&amp;fs=1&amp;iv_load_policy=3&amp;showinfo=0&amp;rel=0&amp;cc_load_policy=0&amp;start=0&amp;end=0&amp;origin=http://youtubeembedcode.com" title="AI Playground: An Introduction" type="text/html" width="500"></iframe></p></div>
+
+
+        </div>
+            </div>
+</div>
+
+    </div><div class="section-content col-md-6 ">
+
+<div id="section_3851"  class="paragraph paragraph--card paragraph-id--3851 card--default">
+    <div class="card card-purple mb-4 box-shadow">
+                <div class="card-body">
+                                                <h3 class="card-title text-center mt-0">
+            <div class="field field--name-field-card-title field--type-string field--label-hidden field__item">Playground safety</div>
+      </h3>
+
+            <div class="clearfix text-formatted field field--name-field-card-body field--type-text-long field--label-hidden field__item"><p class="center"><img src="/sites/default/files/images/2023/07/21/Yield.png" alt="" width="100" height="100"></p><p class="center" style="margin:0 auto;max-width:800px;"><strong>Do not use </strong><a href="https://uit.stanford.edu/guide/riskclassifications#risk-classifications"><strong>high-risk data</strong></a><strong> in your attachments or prompts.</strong></p><p class="center" style="margin:0 auto;max-width:800px;">&nbsp;</p><p class="center" style="margin:0 auto;max-width:800px;">And remember, while large language models (LLMs) are advanced tools, they are not flawless and may create errors or hallucinations. Take caution before trusting or using results verbatim.</p><p>&nbsp;</p></div>
+
+
+        </div>
+                	<div class="card-footer pb-4 border-0 text-center">
+        		<a class="btn btn-secondary mx-1 mt-2" href="https://uit.stanford.edu/security/responsibleai">Responsible AI guidance &raquo;</a>
+                                                                        	</div>
+            </div>
+</div>
+
+    </div></div>
+
+			</div>
+		</div>
+	</div>
+</section>
+</div>
+          </div>
+
+</div>
+    </div>
+  </div>
+
+  </section>
+
+          </div>
+        </div>
+                </main>
+    <div class="spacer"></div>
+        <footer class="site-footer">
+              <div class="container">
+                                <div class="site-footer__bottom">
+                <section class="row region region-footer-fifth">
+    <div id="copyright" class="col-lg-10 offset-lg-2">
+            <p class="vcard"><span aria-hidden="true">&copy;</span><span class="visually-hidden">Copyright</span>
+              <span class="fn org">Stanford University</span>.
+              <span class="adr">
+                <span class="locality">Stanford</span>,
+                <span class="region">California</span>
+                <span class="postal-code">94305</span>.
+              </span>
+            </p>
+        </div>
+  </section>
+
+            </div>
+                  </div>
+          </footer>
+      </div>
+  </div>
+</div>
+  </div>
+
+
+    <script src="/sites/default/files/js/js_4WuSQpfHnFzzE2QNDwccSo5CFA4jSsPsWMp7PGkwHKU.js?scope=footer&amp;delta=0&amp;language=en&amp;theme=stanford_uit&amp;include=eJxlkU1ygzAMhS9k8K77nsQjhHBEjcVIIk1vH2cmhIEu_PO-J3mebRgXrslFygAa32vvStTf5E7K1al6ADPyxHUmdNE4W2_sxMuqrShN_CALsLkUybJ5HHVbofQHCYOImyusqZ2vLDEXGaB05n-Faw4oSp82dL5T1_hPyFxjGwkQXzl2iaUlYtyDfzhXbkUiuVByyDG36ap7mOFxhkswhzqJjmljj0dYHOvZmqQ6_JLJQunrbF1udPJ20TURrq9NhrDS9-snQvOTESje4rF9U70zUoJC6hb_ozTbE4J3tfw"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://kit.fontawesome.com/7832cd8505.js" crossorigin="anonymous"></script>
+
+  </body>
+</html>
